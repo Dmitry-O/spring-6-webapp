@@ -44,8 +44,8 @@ public class BootstrapData implements CommandLineRunner {
         Publisher publisher_abba_saved = publisherRepository.save(publisher_abba);
 
         Author author_rod = new Author();
-        author_rod.setFirstName("Eric");
-        author_rod.setLastName("Kumar");
+        author_rod.setFirstName("Rod");
+        author_rod.setLastName("Johnson");
 
         Book book_noEJB = new Book();
         book_noEJB.setTitle("J2EE Development without EJB");
@@ -58,6 +58,9 @@ public class BootstrapData implements CommandLineRunner {
         author_rod_saved.getBooks().add(book_noEJB_saved);
         book_ddd_saved.setPublisher(publisher_abba_saved);
         book_noEJB_saved.setPublisher(publisher_abba_saved);
+        book_ddd_saved.getAuthors().add(author_eric_saved);
+        book_noEJB_saved.getAuthors().add(author_rod_saved);
+
 
         authorRepository.save(author_eric_saved);
         authorRepository.save(author_rod_saved);
